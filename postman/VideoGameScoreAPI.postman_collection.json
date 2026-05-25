@@ -1,0 +1,140 @@
+{
+  "info": {
+    "_postman_id": "b3c3fd02-4c55-4db8-9d11-4e7a0d9a1001",
+    "name": "Video Game Score API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all scores",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/scores",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "scores"]
+        }
+      }
+    },
+    {
+      "name": "Get scores by category",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/scores?category=RPG",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "scores"],
+          "query": [
+            {
+              "key": "category",
+              "value": "RPG"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get one score by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/scores/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "scores", "1"]
+        }
+      }
+    },
+    {
+      "name": "Create score",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"playerName\": \"Alex\",\n  \"gameTitle\": \"Elden Ring\",\n  \"score\": 9800,\n  \"category\": \"RPG\",\n  \"platform\": \"PC\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/scores",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "scores"]
+        }
+      }
+    },
+    {
+      "name": "Create score failing test",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"playerName\": \"Alex\",\n  \"gameTitle\": \"\",\n  \"score\": 9800,\n  \"category\": \"RPG\",\n  \"platform\": \"PC\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/scores",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "scores"]
+        }
+      }
+    },
+    {
+      "name": "Update score",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"playerName\": \"Alex\",\n  \"gameTitle\": \"Elden Ring\",\n  \"score\": 12000,\n  \"category\": \"RPG\",\n  \"platform\": \"PC\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/scores/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "scores", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete score",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/scores/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "scores", "1"]
+        }
+      }
+    }
+  ]
+}
